@@ -4,6 +4,11 @@ https://codenames.dev/
 
 ---
 
+# Local development
+
+The backend reads the MongoDB connection string from the `MONGO_URL` environment variable. If this variable is not set, it defa
+ults to a local instance at `mongodb://0.0.0.0:27017/`.
+
 # Turborepo starter with npm
 
 This is an official starter turborepo.
