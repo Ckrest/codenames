@@ -5,8 +5,7 @@ import { Db, MongoClient } from "mongodb";
  */
 export async function setupMongoDatabase(): Promise<Db | undefined> {
   const localUrl = `mongodb://0.0.0.0:27017/`;
-  const atlasUrl = `mongodb+srv://codenames:${process.env.MONGO_PASSWORD}@codenames.z041u.mongodb.net/?retryWrites=true&w=majority`;
-  const mongoUrl = process.argv[2] === "dev" ? localUrl : atlasUrl;
+  const mongoUrl = process.env.MONGO_URL || localUrl;
   let db: Db | undefined;
 
   try {
